@@ -1,235 +1,74 @@
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
 
 body{
+    /* background-color: rgb(78, 78, 242); */
+    /* width: 100vw; */
+    padding: 0%;
+}
+
+.one{
+    /* border: 2px solid rgb(178, 0, 0); */
+    border-radius: 15px ;
+}
+.weather2{
+    border: 1px solid rgb(72, 72, 202);
+    border-radius: 15px;
+    
+}
+.two{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    font-size:40px;
     font-family: Arial, Helvetica, sans-serif;
-    /* margin: 0; */
-    background-color: rgb(238, 238, 238);
+    color: white;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
-
-header{
-    background-color: #000000;
-    /* background: linear-gradient(to right, red, green, blue); */
-min-width: 100%;
-max-width: 100%;
-height: auto;
-
-display: flex;
-flex-direction: row;
-align-items: center;
-
-}
-input{
-    height: 30px;
-    border: 2px solid;
-    border-radius: 10px;
-}
-
-
-div.three{
-   /* background-color: aqua; */
-   position: relative;
-   left: 55rem;
-}
-div.two{
-    /* background-color: aqua; */
-   position: relative;
-   left: 55rem;
-}
-
-
-section.sect1{
-    background-color: rgb(218, 206, 206);
-    max-height: 500px;
-    overflow-y: hidden;
-    width: max-content;
-
-    cursor:default;
-
-    transform: translate(0,-520px);
-}
-div.four{
-    /* background-color: crimson; */
-    width: 600px;
-    min-width: auto;
-
-}
-ol{
-    /* background-color: black; */
-    max-width: 100%;
-    height: auto;
-    margin: 0 auto;
-    /* padding: 5px; */
-
-}
-.lii{
-    max-width: 100%;
-    height: auto;
-    margin: 0 auto;
-    margin-left: 3px;
-    border-top: 1px solid gray;
-    border-bottom: 1px solid gray;
-    /* list-style: none; */
-    padding: 10px;
-}
-.lii:hover{
-    transform: scale(1.05);
-    
-}
-.lsting{
-    /* background-color: black; */
-    max-width: 100%;
-    height: auto;
-    margin: 0 auto;
-   
-    
-}
- /* Style the main scrollbar */
- .sect2::-webkit-scrollbar {
-    width: 9px;
-  }
-  
-  /* Style the scrollbar thumb (the draggable part) */
-  .sect2::-webkit-scrollbar-thumb {
-    background-color:rgb(171, 163, 160); /* Color of the thumb */
-    border-radius: 6px; /* Rounded corners for the thumb */
-    min-height: 50px;
-  }
-  
-  /* Style the scrollbar track (the non-draggable part) */
-  .sect2::-webkit-scrollbar-track {
-    background-color: white; /* Color of the track */
-  } 
-
-
-/* Style the main scrollbar */
-.cs::-webkit-scrollbar {
-    width: 9px; /* Width of the scrollbar */
-  }
-  
-  /* Style the scrollbar thumb (the draggable part) */
-  .cs::-webkit-scrollbar-thumb {
-    background-color:rgb(171, 163, 160); /* Color of the thumb */
-    border-radius: 6px; /* Rounded corners for the thumb */
-    min-height: 50px;
-  }
-  
-  /* Style the scrollbar track (the non-draggable part) */
-  .cs::-webkit-scrollbar-track {
-    background-color: white; /* Color of the track */
-  }
-
-
-.cs{
-    /* background-color: #0f0b0b;*/
-     background-color: white; 
-    max-height: 470px;
-    overflow-y: scroll;
-    width: max-content;
-    /* background-position: -100% 0; */
-    /* animation: colormove 4s linear infinite; */
-    cursor:default;
-    visibility: visible;
-    transform: translate(0px,0px);
-    transition: transform 1s ease;
-    color: rgb(0, 0, 0);  
-    border: 2px solid;  
-    
-}
-.cs2{
-    background-color: white;
-    max-height: 470px;
-    overflow-y: scroll;
-    width: max-content;
-
-    cursor:default;
-
-    transform: translate(0,-620px);
-    transition: transform 1s ease;
-    color: rgb(0, 0, 0); 
-    border: 2px solid;
-  
-}
-
-.sect2{
-    /* background-color: #0f0b0b; */
-    background-color: white;
-    transform: translate(0px,0px);
-    /* column-gap: -100px; */
-    max-height: 470px;
-    min-width: 650px;
-    display: flex;
-    flex-direction: column;
-    overflow-y: scroll;  
-    visibility: hidden;
-    color: rgb(0, 0, 0); 
-    border: 2px solid;
-}
-
-div#o-4{
-    /* background-color: darkorange; */
-    height: auto;
-    width: max-content;
-}
-div#o-5{
-    /* background-color: rgb(51, 255, 0); */
-    height: auto;
-    width: max-content;
-}
-ul{
-    height: auto;
-    width: max-content;
-    
-}
-div#o-6{
-    /* background-color: rgb(255, 0, 230); */
-    height: auto;
-    width: 650px;
-}
-
-
-div.container{
-    /* background-color: darkred; */
-    height: auto;
-    width: max-content;
+.three{
     display: flex;
     flex-direction: row;
-    margin-top: 30px;
-    overflow-y: hidden;
-    column-gap: 0px;
 }
-
-div.gif{
-    /* background-color: chartreuse; */
-    width: 40px;
+span{
+    color: white;
+    font-size: 40px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
-div.animesss{
-    width: auto;
-    height: auto;
-    text-align: center;
-    transform: translate(0,0);
-    animation: animess linear 2s infinite alternate;
-    display: none;
-}
-@keyframes animess{
-    0%{
-        transform: translate(0,400px);
-    }
-    
+#button{
+    border-radius: 12px;
 }
 
 
-div.animessss{
-    text-align: center;
-    transform: translate(0,0);
-    animation: animess linear 2s infinite alternate;
-    display: block;
-}
-@keyframes animess{
-    0%{
-        transform: translate(0,400px);
-    }
-    
-}
-img{
+.images{
     width: 100%;
     margin: 0;
+    height: auto;
+}
+.images2{
+    width: 30px;
+    margin: 0;
+    height: auto;
+}
+#humid{
+    height:auto
+}
+.images3{
+    width: 30%;
+    /* height: 40px; */
+}
+.images5{
+    /* background-color: maroon; */
+    width: 100%;
+    margin: 0;
+}
+.images4{
+    width: 40px;
+    /* background-color: darkgoldenrod; */
+}
+.four{
+    width: auto;
+}
+.last{
+    color: white;
 }
