@@ -1,150 +1,55 @@
-(async function(){
-       
-       const response = await fetch("recipes.json");
-       const recepi = await response.json();
+const url = "https://api.openweathermap.org/data/2.5/weather?q=";
+// let cityname= 'Karachi';
+const apikey = "1df1779b66d82802e067653a7057ac0c";
+
+(async function () {
+  const search1 = document.getElementById("searchh");
+  const button = document.getElementById("button");
+  const temp = document.getElementById("temp");
+  const humidity = document.getElementById("humid");
+  const winds = document.getElementById("wind");
+  const pic = document.getElementById("picture");
+
+  button.addEventListener("click", async () => {
+    let cityname = search1.value;
+    console.log(cityname);
+
+    try {
+      const response = await fetch(url + cityname + "&appid=" + apikey);
+      const result = await response.json();
+      // const result = await response.text();
+      console.log(result);
+
+	temp.innerText = (result.main.temp-273.16).toFixed(2);
+  winds.innerText = (result.wind.speed+" Km/h");
+  humidity.innerText = result.main.humidity+"%";
+
+  if(result.weather[0].description == 'smoke')
+  {
+    pic.src = 'smoke-icon.png';
+  }
+  else if(result.weather[0].description == 'scattered clouds')
+  {
+    pic.src = 'scattered-clouds.png';
+  }
+  else if(result.weather[0].description == 'clear sky')
+  {
+    pic.src = 'clear-sky.jpg';
+  }
+  else if(result.weather[0].description == 'few clouds')
+  {
+    pic.src = 'few clouds.jpg';
+  }
+  else if(result.weather[0].description == 'fog')
+  {
+    pic.src = 'fog.jpg';
+  }
 
 
-       const search = document.getElementById("o-1");
-       const send = document.getElementById("o-2");
-       const unorderlist = document.getElementById("o-3");
 
-       const sect2id = document.getElementById("llll");
-       const link = document.getElementById("o-4");
-       const Author = document.getElementById("o-5");
-       const ingred = document.getElementById("o-7");
-       const info = document.getElementById("o-6");
-     
-
-function listing(filtering)
-{
-       unorderlist.innerHTML = "";
-       filtering.forEach(function(result){
-              
-              const listelm = document.createElement("li");
-              console.log(typeof(listelm));
-              listelm.className = "lii";
-              
-              const listelm2 = document.createElement("div");
-              listelm2.className = "lsting";
-              listelm2.innerText = result.title.toUpperCase()+":";
-              listelm2.style.cssText = 'font-size: 15px; font-weight: bold;';
-
-              const listelm3 = document.createElement("div");
-              listelm3.className = "lsting";
-              listelm3.innerText = result.description+".";
-
-              listelm.appendChild(listelm2);
-              listelm.appendChild(listelm3);
-              unorderlist.appendChild(listelm);
-
-              listelm.addEventListener("click",()=>{
-                     sect2id.style.cssText = "visibility: visible;" ;
-
-
-                     link.innerHTML = "";
-                     Author.innerHTML = "";
-                     ingred.innerHTML = "";
-                     info.innerHTML = "";
-                     ingred.innerHTML = ` <b style="margin-left: -40px;">INGREDIENTS:</b> `;
-                     info.innerHTML = ` <b>INSTRUCTIONS:</b> `;
-
-                     link.innerHTML = "<p><b>URL: </b><br>"+result.url+"</p>";
-
-                     Author.innerHTML = "<p><b>Authr Name: </b><br>"+result.author+"</p>";
-
-                     result.ingredients.forEach(function(ing){
-                            let ul_list = document.createElement("li");
-                            ul_list.appendChild(document.createTextNode(ing) );
-                            ingred.appendChild(ul_list);
-                     });
-
-                     info.innerHTML += `<p>${result.instructions.join("")}</p>`;
-                     
-              })
-       });    
-
-}
-
-       send.addEventListener("click",()=>{
-              const query = search.value;
-
-              const filtering = recepi.filter(function(recepi){
-                     return recepi.title.toLowerCase().includes(query.toLowerCase()) ||
-                     recepi.ingredients.join("").toLowerCase().includes(query.toLowerCase());
-              })
-              
-              
-              listing(filtering);
-       })
-       
+    } catch (error) {
+      alert(error);
+    }
+  });
 
 })();
-
-function disp()
-{
-       const A = document.getElementById("ll");
-       A.className = "cs";
-       let animatio = document.getElementById("UpandDown");
-       animatio.className = "animessss";
-
-}
-function disp2()
-{
-       const A = document.getElementById("ll");
-       A.className = "cs2";
-       let animatio = document.getElementById("UpandDown");
-       animatio.className = "animesss"
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// (async function(){
-       
-//        const response = await fetch("recipes.json");
-//        const recepi = await response.json();
-// console.log(recepi);
-
-//        const search = document.getElementById("o-1");
-//        const send = document.getElementById("o-2");
-
-//        function find()
-//        {
-//               const query = search.value;
-//               const filtering = recepi.fi
-//        }
-
-
-//        send.addEventListener("click",find() );
-       
-// })();
